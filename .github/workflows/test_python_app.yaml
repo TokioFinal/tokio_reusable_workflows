@@ -24,7 +24,6 @@ jobs:
       - name: setup virtual environment and run tests
         shell: bash
         run: |
-          cd rest_service
           python -m venv .venv
           source .venv/bin/activate
           pip install -r requirements.txt
