@@ -33,6 +33,7 @@ jobs:
 
   read-output:
     runs-on: ubuntu-latest
+    needs: determine-environment
     steps:
       - name: Extract branch name
         shell: bash
