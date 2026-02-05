@@ -37,4 +37,4 @@ jobs:
     steps:
       - name: Extract branch name
         shell: bash
-        run: echo ${{ jobs.determine-environment.outputs.selected-environment }}
+        run: echo ${{ needs.determine-environment.outputs.selected-environment }}
