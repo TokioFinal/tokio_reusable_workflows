@@ -15,11 +15,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v6
-
-      - name: Set up Python
+      
+      - name: Set up Python  # Uses python version in .python-version file
         uses: actions/setup-python@v6
         with:
-          python-version: ${{github.event.inputs.python-version}} #My local python version
+          python-version: ${{github.event.inputs.python-version}} 
 
       - name: setup virtual environment and run tests
         shell: bash
