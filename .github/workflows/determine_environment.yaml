@@ -3,7 +3,7 @@ name: determine environment
 on:
   workflow_call:
     outputs:
-      environment:
+      selected-environment:
         description: "Environment to be used in workflow"
         value: ${{ jobs.determine-environment.outputs.selected-environment }}
     
