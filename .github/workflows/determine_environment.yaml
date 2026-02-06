@@ -3,9 +3,9 @@ name: determine environment
 on:
   workflow_call:
     outputs:
-      read-environment:
+      selected-environment:
         description: "Environment to be used in workflow"
-        value: ${{ jobs.determine-environment.outputs.environment }}
+        value: ${{ jobs.determine-environment.outputs.selected-environment }}
     
 jobs:
   determine-environment:
@@ -29,7 +29,7 @@ jobs:
             echo "selected-environment=development" >> "$GITHUB_OUTPUT"
           fi
     outputs:
-      environment: ${{ steps.select-environment.outputs.selected-environment }}
+      selected-environment: ${{ steps.select-environment.outputs.selected-environment }}
 
   read-output:
     runs-on: ubuntu-latest
@@ -37,4 +37,4 @@ jobs:
     steps:
       - name: Extract branch name
         shell: bash
-        run: echo ${{ needs.determine-environment.outputs.environment }}
+        run: echo ${{ needs.determine-environment.outputs.selected-environment }}
