@@ -30,11 +30,3 @@ jobs:
           fi
     outputs:
       selected-environment: ${{ steps.select-environment.outputs.selected-environment }}
-
-  read-output:
-    runs-on: ubuntu-latest
-    needs: determine-environment
-    steps:
-      - name: Extract branch name
-        shell: bash
-        run: echo ${{ needs.determine-environment.outputs.selected-environment }}
