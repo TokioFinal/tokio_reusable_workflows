@@ -1,0 +1,20 @@
+name: trivy_scan
+
+on:
+  workflow_call:
+    
+jobs:
+  trivy_scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Run Trivy scan
+        uses: aquasecurity/trivy-action@0.35.0
+        with:
+          scan-type: 'fs'
+          scan-ref: 'app/'
+          format: 'table'
+          exit-code: 1
+          ignore-unfixed: false
+          severity: 'LOW,MEDIUM,HIGH,CRITICAL'
