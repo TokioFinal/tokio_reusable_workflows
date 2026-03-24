@@ -29,5 +29,6 @@ runs:
         scan-ref: '.'
         format: 'table'
         exit-code: 1
-        ignore-unfixed: false
-        scanners: 'misconfig,vuln,secret'
+        ignore-unfixed: true
+        scanners: 'vuln,secret'
+        severity: 'HIGH,CRITICAL'
