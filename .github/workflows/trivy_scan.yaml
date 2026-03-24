@@ -10,9 +10,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
       - name: Run Trivy scan
-        uses: aquasecurity/trivy-action@0.35.0
+        uses: aquasecurity/trivy-action@master
         with:
-          scan-type: 'fs'
+          scan-type: 'rootfs'
           scan-ref: '.'
           format: 'table'
           exit-code: 1
