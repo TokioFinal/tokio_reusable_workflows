@@ -3,11 +3,11 @@ description: Setup Environments and runs trivy_scan
 
 inputs:
   requirements:
-    type: string
+    description: requirement file to be used
     required: true
     
 runs:
-  using: "composit"
+  using: "composite"
   steps:
     - name: Checkout repository
       uses: actions/checkout@v4
